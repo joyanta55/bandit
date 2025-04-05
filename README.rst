@@ -31,6 +31,23 @@
     :target: https://discord.gg/qYxpadCgkx
     :alt: Discord
 
+## Update
+Create Dockerfile rules to export bandit. run 
+```
+# Run with Default configs
+docker build -t bandit .
+```
+to build the docker image. Followed by
+```
+docker run bandit -h
+```
+Please make sure to mount your python source code library with the `docker run` command. Example shown, if you want to scan your python source code located in `/tmp` directory. 
+
+```
+docker run -v /tmp:/mnt/tmp bandit /mnt/tmp/buggy_python.py
+```
+
+
 A security linter from PyCQA
 
 * Free software: Apache license
