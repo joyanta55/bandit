@@ -1,3 +1,4 @@
+
 .. image:: https://raw.githubusercontent.com/pycqa/bandit/main/logo/logotype-sm.png
     :alt: Bandit
 
@@ -31,22 +32,25 @@
     :target: https://discord.gg/qYxpadCgkx
     :alt: Discord
 
-## Update
-Create Dockerfile rules to export bandit. run 
-```
-# Run with Default configs
-docker build -t bandit .
-```
+Update
+-------
+Create Dockerfile rules to export bandit. Run 
+
+.. code-block:: console
+
+    docker build -t bandit .
 to build the docker image. Followed by
-```
-docker run bandit -h
-```
-Please make sure to mount your python source code library with the `docker run` command. Example shown, if you want to scan your python source code located in `/tmp` directory. 
 
-```
-docker run -v /tmp:/mnt/tmp bandit /mnt/tmp/buggy_python.py
-```
+.. code-block:: console
 
+    docker run bandit -h
+
+Please make sure to mount your python source code library with the `docker run` command. Example shown, if you want to scan your python source code located in `/tmp` directory (/tmp/buggy_python.py)
+
+.. code-block:: console
+
+    docker run -v /tmp:/mnt/tmp bandit /mnt/tmp/buggy_python.py
+I have attched a sample buggy python code in the repo (buggy_python.py). Just cp buggy_python.py /tmp/buggy_python.py. And run the above docker command.
 
 A security linter from PyCQA
 
